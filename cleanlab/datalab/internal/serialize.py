@@ -24,6 +24,7 @@ import pandas as pd
 
 import cleanlab
 from cleanlab.datalab.internal.data import Data
+import fickling
 
 if TYPE_CHECKING:  # pragma: no cover
     from datasets.arrow_dataset import Dataset
@@ -107,7 +108,7 @@ class _Serializer:
             raise ValueError(f"No folder found at specified path: {path}")
 
         with open(os.path.join(path, OBJECT_FILENAME), "rb") as f:
-            datalab: Datalab = pickle.load(f)
+            datalab: Datalab = fickling.load(f)
 
         cls._validate_version(datalab)
 
