@@ -30,3 +30,4 @@ datasets>=2.14.6
 seaborn==0.13.2
 faiss-cpu==1.8.0
 xgboost
+transformers>=5.0.0rc1 # not directly required, pinned by Snyk to avoid a vulnerability
